@@ -1,0 +1,15 @@
+from tensorflow.keras.models import load_model
+
+# Load the model
+model = load_model('models/OCR_ResNet_best.h5')
+
+# Print the model summary to see its architecture
+model.summary()
+
+# Access the layers
+for layer in model.layers:
+    print(layer.name, layer.output_shape)
+
+# Accessing the model's weights (list of numpy arrays)
+weights = model.get_weights()
+print(f'Number of weights: {len(weights)}')
